@@ -1,0 +1,6 @@
+vhdl work "xfft_v7_1.vhd"
+vhdl work "LCD.vhd"
+vhdl work "Common.vhd"
+vhdl work "LCD_DataSender.vhd"
+vhdl work "AC97.vhd"
+vhdl work "Top.vhd"

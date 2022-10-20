@@ -1,0 +1,108 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 1 -n
+3 -fastpaths -xml top_module.twx top_module.ncd -o top_module.twr
+top_module.pcf -ucf Board_Constraints.ucf
+
+Design file:              top_module.ncd
+Physical constraint file: top_module.pcf
+Device,package,speed:     xc5vlx50t,ff1136,-1 (PRODUCTION 1.73 2013-10-13, STEPPING level 0)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock AUD_BIT_CLK
+-------------+------------+------------+------------------+--------+
+             |Max Setup to|Max Hold to |                  | Clock  |
+Source       | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+-------------+------------+------------+------------------+--------+
+AUD_SDI      |    1.711(F)|    1.331(F)|AUD_BIT_CLK_BUFGP |   0.000|
+AUD_reset_btn|    1.927(R)|    0.966(R)|AUD_BIT_CLK_BUFGP |   0.000|
+-------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock clk
+-------------+------------+------------+------------------+--------+
+             |Max Setup to|Max Hold to |                  | Clock  |
+Source       | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+-------------+------------+------------+------------------+--------+
+AUD_reset_btn|    4.908(R)|    0.583(R)|clk_BUFGP         |   0.000|
+LCD_clear_btn|    3.482(R)|    0.881(R)|clk_BUFGP         |   0.000|
+LCD_reset_btn|    1.547(R)|    1.033(R)|clk_BUFGP         |   0.000|
+-------------+------------+------------+------------------+--------+
+
+Clock AUD_BIT_CLK to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+AUD_SDO     |   10.235(R)|AUD_BIT_CLK_BUFGP |   0.000|
+AUD_SYNC    |   10.465(R)|AUD_BIT_CLK_BUFGP |   0.000|
+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+AUD_RESET   |    9.188(R)|clk_BUFGP         |   0.000|
+LCD_E       |   10.640(R)|clk_BUFGP         |   0.000|
+LCD_RS      |   10.901(R)|clk_BUFGP         |   0.000|
+to_LCD<0>   |   10.880(R)|clk_BUFGP         |   0.000|
+to_LCD<1>   |   10.747(R)|clk_BUFGP         |   0.000|
+to_LCD<2>   |   10.095(R)|clk_BUFGP         |   0.000|
+to_LCD<3>   |   10.542(R)|clk_BUFGP         |   0.000|
+to_LCD<4>   |   10.304(R)|clk_BUFGP         |   0.000|
+to_LCD<5>   |   10.288(R)|clk_BUFGP         |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock AUD_BIT_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AUD_BIT_CLK    |    5.149|         |    7.982|   12.317|
+clk            |         |         |    8.081|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AUD_BIT_CLK    |    4.890|   11.551|         |         |
+clk            |   44.277|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Sat Oct  8 02:14:23 2022 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 829 MB
+
+
+

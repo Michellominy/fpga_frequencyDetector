@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/FrequencyFinder/top_module.ncd
+OUTFILE=/home/ise/FrequencyFinder/top_module.bit
+FAMILY=Virtex5
+PART=xc5vlx50t-1ff1136
+WORKINGDIR=/home/ise/FrequencyFinder
+LICENSE=ISE
+USER_INFO=8416_11442_1478797146_620

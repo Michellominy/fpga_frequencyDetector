@@ -1,0 +1,815 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Mapping Report File for Design 'top_module'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc5vlx50t-ff1136-1 -w -logic_opt off -ol
+high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr
+off -lc off -power off -o top_module_map.ncd top_module.ngd top_module.pcf 
+Target Device  : xc5vlx50t
+Target Package : ff1136
+Target Speed   : -1
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Sat Oct  8 02:04:50 2022
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    1
+Slice Logic Utilization:
+  Number of Slice Registers:                20,488 out of  28,800   71%
+    Number used as Flip Flops:              20,479
+    Number used as Latches:                      9
+  Number of Slice LUTs:                      9,355 out of  28,800   32%
+    Number used as logic:                    9,164 out of  28,800   31%
+      Number using O6 output only:           8,686
+      Number using O5 output only:             191
+      Number using O5 and O6:                  287
+    Number used as Memory:                     169 out of   7,680    2%
+      Number used as Shift Register:           169
+        Number using O6 output only:           169
+    Number used as exclusive route-thru:        22
+  Number of route-thrus:                       250
+    Number using O6 output only:               204
+    Number using O5 output only:                38
+    Number using O5 and O6:                      8
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 6,491 out of   7,200   90%
+  Number of LUT Flip Flop pairs used:       22,596
+    Number with an unused Flip Flop:         2,108 out of  22,596    9%
+    Number with an unused LUT:              13,241 out of  22,596   58%
+    Number of fully used LUT-FF pairs:       7,247 out of  22,596   32%
+    Number of unique control sets:           1,050
+    Number of slice register sites lost
+      to control set restrictions:           2,079 out of  28,800    7%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        20 out of     480    4%
+    Number of LOCed IOBs:                       20 out of      20  100%
+
+Specific Feature Utilization:
+  Number of BlockRAM/FIFO:                       6 out of      60   10%
+    Number using BlockRAM only:                  6
+    Total primitives used:
+      Number of 18k BlockRAM used:               7
+    Total Memory used (KB):                    126 out of   2,160    5%
+  Number of BUFG/BUFGCTRLs:                      2 out of      32    6%
+    Number used as BUFGs:                        2
+  Number of DSP48Es:                            17 out of      48   35%
+
+Average Fanout of Non-Clock Nets:                3.11
+
+Peak Memory Usage:  1265 MB
+Total REAL time to MAP completion:  4 mins 36 secs 
+Total CPU time to MAP completion:   4 mins 29 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net AC97_audio/reg_data_or0000
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+
+Section 3 - Informational
+-------------------------
+INFO:Security:54 - 'xc5vlx50t' is a WebPack part.
+INFO:LIT:243 - Logical network dumb has no load.
+INFO:LIT:395 - The above info message is repeated 13 more times for the
+   following (max. 5 shown):
+   xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/B
+   LK_EXP<4>,
+   xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/B
+   LK_EXP<3>,
+   xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/B
+   LK_EXP<2>,
+   xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/B
+   LK_EXP<1>,
+   xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/B
+   LK_EXP<0>
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 270 block(s) removed
+  96 block(s) optimized away
+ 188 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "xfft/blk000002c8" (SFF) removed.
+ The signal "xfft/sig00000871" is loadless and has been removed.
+  Loadless block "xfft/blk000002ad" (ROM) removed.
+   The signal "xfft/sig000007b1" is loadless and has been removed.
+    Loadless block "xfft/blk00000857/blk0000089f" (FF) removed.
+     The signal "xfft/blk00000857/sig000014e0" is loadless and has been removed.
+      Loadless block "xfft/blk00000857/blk00000859" (XOR) removed.
+Loadless block "xfft/blk000002c9" (SFF) removed.
+ The signal "xfft/sig00000872" is loadless and has been removed.
+  Loadless block "xfft/blk000002ae" (ROM) removed.
+   The signal "xfft/sig000007b2" is loadless and has been removed.
+    Loadless block "xfft/blk00000857/blk0000089e" (FF) removed.
+     The signal "xfft/blk00000857/sig000014f7" is loadless and has been removed.
+      Loadless block "xfft/blk00000857/blk00000870" (XOR) removed.
+Loadless block "xfft/blk000002ca" (SFF) removed.
+ The signal "xfft/sig00000873" is loadless and has been removed.
+  Loadless block "xfft/blk000002af" (ROM) removed.
+   The signal "xfft/sig000007b3" is loadless and has been removed.
+    Loadless block "xfft/blk00000857/blk0000089d" (FF) removed.
+     The signal "xfft/blk00000857/sig000014f6" is loadless and has been removed.
+      Loadless block "xfft/blk00000857/blk0000086f" (XOR) removed.
+Loadless block "xfft/blk000002cb" (SFF) removed.
+ The signal "xfft/sig00000874" is loadless and has been removed.
+  Loadless block "xfft/blk000002b0" (ROM) removed.
+Loadless block "xfft/blk000002cc" (SFF) removed.
+ The signal "xfft/sig00000875" is loadless and has been removed.
+  Loadless block "xfft/blk000002b1" (ROM) removed.
+Loadless block "xfft/blk000002cd" (SFF) removed.
+ The signal "xfft/sig00000876" is loadless and has been removed.
+  Loadless block "xfft/blk000002b2" (ROM) removed.
+Loadless block "xfft/blk000002e0" (SFF) removed.
+ The signal "xfft/sig00000889" is loadless and has been removed.
+  Loadless block "xfft/blk000002c5" (ROM) removed.
+Loadless block "xfft/blk000002e1" (SFF) removed.
+ The signal "xfft/sig0000088a" is loadless and has been removed.
+  Loadless block "xfft/blk000002c6" (ROM) removed.
+Loadless block "xfft/blk000002e2" (SFF) removed.
+ The signal "xfft/sig0000088b" is loadless and has been removed.
+  Loadless block "xfft/blk000002c7" (ROM) removed.
+Loadless block "xfft/blk000002fe" (SFF) removed.
+ The signal "xfft/sig0000088c" is loadless and has been removed.
+  Loadless block "xfft/blk000002e3" (ROM) removed.
+   The signal "xfft/sig00000799" is loadless and has been removed.
+    Loadless block "xfft/blk000008b8/blk00000900" (FF) removed.
+     The signal "xfft/blk000008b8/sig00001570" is loadless and has been removed.
+      Loadless block "xfft/blk000008b8/blk000008ba" (XOR) removed.
+Loadless block "xfft/blk000002ff" (SFF) removed.
+ The signal "xfft/sig0000088d" is loadless and has been removed.
+  Loadless block "xfft/blk000002e4" (ROM) removed.
+   The signal "xfft/sig0000079a" is loadless and has been removed.
+    Loadless block "xfft/blk000008b8/blk000008ff" (FF) removed.
+     The signal "xfft/blk000008b8/sig00001587" is loadless and has been removed.
+      Loadless block "xfft/blk000008b8/blk000008d1" (XOR) removed.
+Loadless block "xfft/blk00000300" (SFF) removed.
+ The signal "xfft/sig0000088e" is loadless and has been removed.
+  Loadless block "xfft/blk000002e5" (ROM) removed.
+   The signal "xfft/sig0000079b" is loadless and has been removed.
+    Loadless block "xfft/blk000008b8/blk000008fe" (FF) removed.
+     The signal "xfft/blk000008b8/sig00001586" is loadless and has been removed.
+      Loadless block "xfft/blk000008b8/blk000008d0" (XOR) removed.
+Loadless block "xfft/blk00000301" (SFF) removed.
+ The signal "xfft/sig0000088f" is loadless and has been removed.
+  Loadless block "xfft/blk000002e6" (ROM) removed.
+Loadless block "xfft/blk00000302" (SFF) removed.
+ The signal "xfft/sig00000890" is loadless and has been removed.
+  Loadless block "xfft/blk000002e7" (ROM) removed.
+Loadless block "xfft/blk00000303" (SFF) removed.
+ The signal "xfft/sig00000891" is loadless and has been removed.
+  Loadless block "xfft/blk000002e8" (ROM) removed.
+Loadless block "xfft/blk00000316" (SFF) removed.
+ The signal "xfft/sig000008a4" is loadless and has been removed.
+  Loadless block "xfft/blk000002fb" (ROM) removed.
+Loadless block "xfft/blk00000317" (SFF) removed.
+ The signal "xfft/sig000008a5" is loadless and has been removed.
+  Loadless block "xfft/blk000002fc" (ROM) removed.
+Loadless block "xfft/blk00000318" (SFF) removed.
+ The signal "xfft/sig000008a6" is loadless and has been removed.
+  Loadless block "xfft/blk000002fd" (ROM) removed.
+Loadless block "xfft/blk00000334" (SFF) removed.
+ The signal "xfft/sig000008a7" is loadless and has been removed.
+  Loadless block "xfft/blk00000319" (ROM) removed.
+   The signal "xfft/sig00000751" is loadless and has been removed.
+    Loadless block "xfft/blk00000795/blk000007dd" (FF) removed.
+     The signal "xfft/blk00000795/sig000013c0" is loadless and has been removed.
+      Loadless block "xfft/blk00000795/blk00000797" (XOR) removed.
+Loadless block "xfft/blk00000335" (SFF) removed.
+ The signal "xfft/sig000008a8" is loadless and has been removed.
+  Loadless block "xfft/blk0000031a" (ROM) removed.
+   The signal "xfft/sig00000752" is loadless and has been removed.
+    Loadless block "xfft/blk00000795/blk000007dc" (FF) removed.
+     The signal "xfft/blk00000795/sig000013d7" is loadless and has been removed.
+      Loadless block "xfft/blk00000795/blk000007ae" (XOR) removed.
+Loadless block "xfft/blk00000336" (SFF) removed.
+ The signal "xfft/sig000008a9" is loadless and has been removed.
+  Loadless block "xfft/blk0000031b" (ROM) removed.
+   The signal "xfft/sig00000753" is loadless and has been removed.
+    Loadless block "xfft/blk00000795/blk000007db" (FF) removed.
+     The signal "xfft/blk00000795/sig000013d6" is loadless and has been removed.
+      Loadless block "xfft/blk00000795/blk000007ad" (XOR) removed.
+Loadless block "xfft/blk00000337" (SFF) removed.
+ The signal "xfft/sig000008aa" is loadless and has been removed.
+  Loadless block "xfft/blk0000031c" (ROM) removed.
+Loadless block "xfft/blk00000338" (SFF) removed.
+ The signal "xfft/sig000008ab" is loadless and has been removed.
+  Loadless block "xfft/blk0000031d" (ROM) removed.
+Loadless block "xfft/blk00000339" (SFF) removed.
+ The signal "xfft/sig000008ac" is loadless and has been removed.
+  Loadless block "xfft/blk0000031e" (ROM) removed.
+Loadless block "xfft/blk0000034c" (SFF) removed.
+ The signal "xfft/sig000008bf" is loadless and has been removed.
+  Loadless block "xfft/blk00000331" (ROM) removed.
+Loadless block "xfft/blk0000034d" (SFF) removed.
+ The signal "xfft/sig000008c0" is loadless and has been removed.
+  Loadless block "xfft/blk00000332" (ROM) removed.
+Loadless block "xfft/blk0000034e" (SFF) removed.
+ The signal "xfft/sig000008c1" is loadless and has been removed.
+  Loadless block "xfft/blk00000333" (ROM) removed.
+Loadless block "xfft/blk0000036a" (SFF) removed.
+ The signal "xfft/sig000008c2" is loadless and has been removed.
+  Loadless block "xfft/blk0000034f" (ROM) removed.
+   The signal "xfft/sig00000739" is loadless and has been removed.
+    Loadless block "xfft/blk000007f6/blk0000083e" (FF) removed.
+     The signal "xfft/blk000007f6/sig00001450" is loadless and has been removed.
+      Loadless block "xfft/blk000007f6/blk000007f8" (XOR) removed.
+Loadless block "xfft/blk0000036b" (SFF) removed.
+ The signal "xfft/sig000008c3" is loadless and has been removed.
+  Loadless block "xfft/blk00000350" (ROM) removed.
+   The signal "xfft/sig0000073a" is loadless and has been removed.
+    Loadless block "xfft/blk000007f6/blk0000083d" (FF) removed.
+     The signal "xfft/blk000007f6/sig00001467" is loadless and has been removed.
+      Loadless block "xfft/blk000007f6/blk0000080f" (XOR) removed.
+Loadless block "xfft/blk0000036c" (SFF) removed.
+ The signal "xfft/sig000008c4" is loadless and has been removed.
+  Loadless block "xfft/blk00000351" (ROM) removed.
+   The signal "xfft/sig0000073b" is loadless and has been removed.
+    Loadless block "xfft/blk000007f6/blk0000083c" (FF) removed.
+     The signal "xfft/blk000007f6/sig00001466" is loadless and has been removed.
+      Loadless block "xfft/blk000007f6/blk0000080e" (XOR) removed.
+Loadless block "xfft/blk0000036d" (SFF) removed.
+ The signal "xfft/sig000008c5" is loadless and has been removed.
+  Loadless block "xfft/blk00000352" (ROM) removed.
+Loadless block "xfft/blk0000036e" (SFF) removed.
+ The signal "xfft/sig000008c6" is loadless and has been removed.
+  Loadless block "xfft/blk00000353" (ROM) removed.
+Loadless block "xfft/blk0000036f" (SFF) removed.
+ The signal "xfft/sig000008c7" is loadless and has been removed.
+  Loadless block "xfft/blk00000354" (ROM) removed.
+Loadless block "xfft/blk00000382" (SFF) removed.
+ The signal "xfft/sig000008da" is loadless and has been removed.
+  Loadless block "xfft/blk00000367" (ROM) removed.
+Loadless block "xfft/blk00000383" (SFF) removed.
+ The signal "xfft/sig000008db" is loadless and has been removed.
+  Loadless block "xfft/blk00000368" (ROM) removed.
+Loadless block "xfft/blk00000384" (SFF) removed.
+ The signal "xfft/sig000008dc" is loadless and has been removed.
+  Loadless block "xfft/blk00000369" (ROM) removed.
+Loadless block "xfft/blk000003a0" (SFF) removed.
+ The signal "xfft/sig000008dd" is loadless and has been removed.
+  Loadless block "xfft/blk00000385" (ROM) removed.
+   The signal "xfft/sig00000781" is loadless and has been removed.
+    Loadless block "xfft/blk000009db/blk000009dd" (FF) removed.
+     The signal "xfft/blk000009db/sig00001720" is loadless and has been removed.
+      Loadless block "xfft/blk000009db/blk000009f5" (XOR) removed.
+Loadless block "xfft/blk000003a1" (SFF) removed.
+ The signal "xfft/sig000008de" is loadless and has been removed.
+  Loadless block "xfft/blk00000386" (ROM) removed.
+   The signal "xfft/sig00000782" is loadless and has been removed.
+    Loadless block "xfft/blk000009db/blk000009de" (FF) removed.
+     The signal "xfft/blk000009db/sig00001737" is loadless and has been removed.
+      Loadless block "xfft/blk000009db/blk00000a0c" (XOR) removed.
+Loadless block "xfft/blk000003a2" (SFF) removed.
+ The signal "xfft/sig000008df" is loadless and has been removed.
+  Loadless block "xfft/blk00000387" (ROM) removed.
+   The signal "xfft/sig00000783" is loadless and has been removed.
+    Loadless block "xfft/blk000009db/blk000009df" (FF) removed.
+     The signal "xfft/blk000009db/sig00001736" is loadless and has been removed.
+      Loadless block "xfft/blk000009db/blk00000a0b" (XOR) removed.
+Loadless block "xfft/blk000003a3" (SFF) removed.
+ The signal "xfft/sig000008e0" is loadless and has been removed.
+  Loadless block "xfft/blk00000388" (ROM) removed.
+Loadless block "xfft/blk000003a4" (SFF) removed.
+ The signal "xfft/sig000008e1" is loadless and has been removed.
+  Loadless block "xfft/blk00000389" (ROM) removed.
+Loadless block "xfft/blk000003a5" (SFF) removed.
+ The signal "xfft/sig000008e2" is loadless and has been removed.
+  Loadless block "xfft/blk0000038a" (ROM) removed.
+Loadless block "xfft/blk000003b8" (SFF) removed.
+ The signal "xfft/sig000008f5" is loadless and has been removed.
+  Loadless block "xfft/blk0000039d" (ROM) removed.
+Loadless block "xfft/blk000003b9" (SFF) removed.
+ The signal "xfft/sig000008f6" is loadless and has been removed.
+  Loadless block "xfft/blk0000039e" (ROM) removed.
+Loadless block "xfft/blk000003ba" (SFF) removed.
+ The signal "xfft/sig000008f7" is loadless and has been removed.
+  Loadless block "xfft/blk0000039f" (ROM) removed.
+Loadless block "xfft/blk000003d6" (SFF) removed.
+ The signal "xfft/sig000008f8" is loadless and has been removed.
+  Loadless block "xfft/blk000003bb" (ROM) removed.
+   The signal "xfft/sig00000769" is loadless and has been removed.
+    Loadless block "xfft/blk00000a3c/blk00000a3e" (FF) removed.
+     The signal "xfft/blk00000a3c/sig000017b0" is loadless and has been removed.
+      Loadless block "xfft/blk00000a3c/blk00000a56" (XOR) removed.
+Loadless block "xfft/blk000003d7" (SFF) removed.
+ The signal "xfft/sig000008f9" is loadless and has been removed.
+  Loadless block "xfft/blk000003bc" (ROM) removed.
+   The signal "xfft/sig0000076a" is loadless and has been removed.
+    Loadless block "xfft/blk00000a3c/blk00000a3f" (FF) removed.
+     The signal "xfft/blk00000a3c/sig000017c7" is loadless and has been removed.
+      Loadless block "xfft/blk00000a3c/blk00000a6d" (XOR) removed.
+Loadless block "xfft/blk000003d8" (SFF) removed.
+ The signal "xfft/sig000008fa" is loadless and has been removed.
+  Loadless block "xfft/blk000003bd" (ROM) removed.
+   The signal "xfft/sig0000076b" is loadless and has been removed.
+    Loadless block "xfft/blk00000a3c/blk00000a40" (FF) removed.
+     The signal "xfft/blk00000a3c/sig000017c6" is loadless and has been removed.
+      Loadless block "xfft/blk00000a3c/blk00000a6c" (XOR) removed.
+Loadless block "xfft/blk000003d9" (SFF) removed.
+ The signal "xfft/sig000008fb" is loadless and has been removed.
+  Loadless block "xfft/blk000003be" (ROM) removed.
+Loadless block "xfft/blk000003da" (SFF) removed.
+ The signal "xfft/sig000008fc" is loadless and has been removed.
+  Loadless block "xfft/blk000003bf" (ROM) removed.
+Loadless block "xfft/blk000003db" (SFF) removed.
+ The signal "xfft/sig000008fd" is loadless and has been removed.
+  Loadless block "xfft/blk000003c0" (ROM) removed.
+Loadless block "xfft/blk000003ee" (SFF) removed.
+ The signal "xfft/sig00000910" is loadless and has been removed.
+  Loadless block "xfft/blk000003d3" (ROM) removed.
+Loadless block "xfft/blk000003ef" (SFF) removed.
+ The signal "xfft/sig00000911" is loadless and has been removed.
+  Loadless block "xfft/blk000003d4" (ROM) removed.
+Loadless block "xfft/blk000003f0" (SFF) removed.
+ The signal "xfft/sig00000912" is loadless and has been removed.
+  Loadless block "xfft/blk000003d5" (ROM) removed.
+Loadless block "xfft/blk0000040c" (SFF) removed.
+ The signal "xfft/sig00000913" is loadless and has been removed.
+  Loadless block "xfft/blk000003f1" (ROM) removed.
+   The signal "xfft/sig00000721" is loadless and has been removed.
+    Loadless block "xfft/blk00000919/blk0000091b" (FF) removed.
+     The signal "xfft/blk00000919/sig00001600" is loadless and has been removed.
+      Loadless block "xfft/blk00000919/blk00000933" (XOR) removed.
+Loadless block "xfft/blk0000040d" (SFF) removed.
+ The signal "xfft/sig00000914" is loadless and has been removed.
+  Loadless block "xfft/blk000003f2" (ROM) removed.
+   The signal "xfft/sig00000722" is loadless and has been removed.
+    Loadless block "xfft/blk00000919/blk0000091c" (FF) removed.
+     The signal "xfft/blk00000919/sig00001617" is loadless and has been removed.
+      Loadless block "xfft/blk00000919/blk0000094a" (XOR) removed.
+Loadless block "xfft/blk0000040e" (SFF) removed.
+ The signal "xfft/sig00000915" is loadless and has been removed.
+  Loadless block "xfft/blk000003f3" (ROM) removed.
+   The signal "xfft/sig00000723" is loadless and has been removed.
+    Loadless block "xfft/blk00000919/blk0000091d" (FF) removed.
+     The signal "xfft/blk00000919/sig00001616" is loadless and has been removed.
+      Loadless block "xfft/blk00000919/blk00000949" (XOR) removed.
+Loadless block "xfft/blk0000040f" (SFF) removed.
+ The signal "xfft/sig00000916" is loadless and has been removed.
+  Loadless block "xfft/blk000003f4" (ROM) removed.
+Loadless block "xfft/blk00000410" (SFF) removed.
+ The signal "xfft/sig00000917" is loadless and has been removed.
+  Loadless block "xfft/blk000003f5" (ROM) removed.
+Loadless block "xfft/blk00000411" (SFF) removed.
+ The signal "xfft/sig00000918" is loadless and has been removed.
+  Loadless block "xfft/blk000003f6" (ROM) removed.
+Loadless block "xfft/blk00000424" (SFF) removed.
+ The signal "xfft/sig0000092b" is loadless and has been removed.
+  Loadless block "xfft/blk00000409" (ROM) removed.
+Loadless block "xfft/blk00000425" (SFF) removed.
+ The signal "xfft/sig0000092c" is loadless and has been removed.
+  Loadless block "xfft/blk0000040a" (ROM) removed.
+Loadless block "xfft/blk00000426" (SFF) removed.
+ The signal "xfft/sig0000092d" is loadless and has been removed.
+  Loadless block "xfft/blk0000040b" (ROM) removed.
+Loadless block "xfft/blk00000442" (SFF) removed.
+ The signal "xfft/sig0000092e" is loadless and has been removed.
+  Loadless block "xfft/blk00000427" (ROM) removed.
+   The signal "xfft/sig00000709" is loadless and has been removed.
+    Loadless block "xfft/blk0000097a/blk0000097c" (FF) removed.
+     The signal "xfft/blk0000097a/sig00001690" is loadless and has been removed.
+      Loadless block "xfft/blk0000097a/blk00000994" (XOR) removed.
+Loadless block "xfft/blk00000443" (SFF) removed.
+ The signal "xfft/sig0000092f" is loadless and has been removed.
+  Loadless block "xfft/blk00000428" (ROM) removed.
+   The signal "xfft/sig0000070a" is loadless and has been removed.
+    Loadless block "xfft/blk0000097a/blk0000097d" (FF) removed.
+     The signal "xfft/blk0000097a/sig000016a7" is loadless and has been removed.
+      Loadless block "xfft/blk0000097a/blk000009ab" (XOR) removed.
+Loadless block "xfft/blk00000444" (SFF) removed.
+ The signal "xfft/sig00000930" is loadless and has been removed.
+  Loadless block "xfft/blk00000429" (ROM) removed.
+   The signal "xfft/sig0000070b" is loadless and has been removed.
+    Loadless block "xfft/blk0000097a/blk0000097e" (FF) removed.
+     The signal "xfft/blk0000097a/sig000016a6" is loadless and has been removed.
+      Loadless block "xfft/blk0000097a/blk000009aa" (XOR) removed.
+Loadless block "xfft/blk00000445" (SFF) removed.
+ The signal "xfft/sig00000931" is loadless and has been removed.
+  Loadless block "xfft/blk0000042a" (ROM) removed.
+Loadless block "xfft/blk00000446" (SFF) removed.
+ The signal "xfft/sig00000932" is loadless and has been removed.
+  Loadless block "xfft/blk0000042b" (ROM) removed.
+Loadless block "xfft/blk00000447" (SFF) removed.
+ The signal "xfft/sig00000933" is loadless and has been removed.
+  Loadless block "xfft/blk0000042c" (ROM) removed.
+Loadless block "xfft/blk0000045a" (SFF) removed.
+ The signal "xfft/sig00000946" is loadless and has been removed.
+  Loadless block "xfft/blk0000043f" (ROM) removed.
+Loadless block "xfft/blk0000045b" (SFF) removed.
+ The signal "xfft/sig00000947" is loadless and has been removed.
+  Loadless block "xfft/blk00000440" (ROM) removed.
+Loadless block "xfft/blk0000045c" (SFF) removed.
+ The signal "xfft/sig00000948" is loadless and has been removed.
+  Loadless block "xfft/blk00000441" (ROM) removed.
+Loadless block "xfft/blk00000eb3/blk00000eb5" (XOR) removed.
+ The signal "xfft/blk00000eb3/sig00001c7e" is loadless and has been removed.
+  Loadless block "xfft/blk00000eb3/blk00000eb4" (ONE) removed.
+ The signal "xfft/blk00000eb3/sig00001c87" is loadless and has been removed.
+  Loadless block "xfft/blk00000eb3/blk00000ec6" (BUF) removed.
+Loadless block "xfft/blk00000eb3/blk00000eb6" (XOR) removed.
+ The signal "xfft/blk00000eb3/sig00001c88" is loadless and has been removed.
+  Loadless block "xfft/blk00000eb3/blk00000ebe" (MUX) removed.
+   The signal "xfft/blk00000eb3/sig00001c89" is loadless and has been removed.
+    Loadless block "xfft/blk00000eb3/blk00000ebf" (MUX) removed.
+     The signal "xfft/blk00000eb3/sig00001c8a" is loadless and has been removed.
+      Loadless block "xfft/blk00000eb3/blk00000ec0" (MUX) removed.
+       The signal "xfft/blk00000eb3/sig00001c8b" is loadless and has been removed.
+        Loadless block "xfft/blk00000eb3/blk00000ec1" (MUX) removed.
+         The signal "xfft/blk00000eb3/sig00001c8c" is loadless and has been removed.
+          Loadless block "xfft/blk00000eb3/blk00000ec2" (MUX) removed.
+           The signal "xfft/blk00000eb3/sig00001c8d" is loadless and has been removed.
+            Loadless block "xfft/blk00000eb3/blk00000ec3" (MUX) removed.
+             The signal "xfft/blk00000eb3/sig00001c8e" is loadless and has been removed.
+              Loadless block "xfft/blk00000eb3/blk00000ec4" (MUX) removed.
+               The signal "xfft/blk00000eb3/sig00001c8f" is loadless and has been removed.
+                Loadless block "xfft/blk00000eb3/blk00000ec5" (MUX) removed.
+               The signal "xfft/blk00000eb3/sig00001c85" is loadless and has been removed.
+                Loadless block "xfft/blk00000eb3/blk00000ec7" (BUF) removed.
+             The signal "xfft/blk00000eb3/sig00001c84" is loadless and has been removed.
+              Loadless block "xfft/blk00000eb3/blk00000ec8" (BUF) removed.
+           The signal "xfft/blk00000eb3/sig00001c83" is loadless and has been removed.
+            Loadless block "xfft/blk00000eb3/blk00000ec9" (BUF) removed.
+         The signal "xfft/blk00000eb3/sig00001c82" is loadless and has been removed.
+          Loadless block "xfft/blk00000eb3/blk00000eca" (BUF) removed.
+       The signal "xfft/blk00000eb3/sig00001c81" is loadless and has been removed.
+        Loadless block "xfft/blk00000eb3/blk00000ecb" (BUF) removed.
+     The signal "xfft/blk00000eb3/sig00001c80" is loadless and has been removed.
+      Loadless block "xfft/blk00000eb3/blk00000ecc" (BUF) removed.
+   The signal "xfft/blk00000eb3/sig00001c7f" is loadless and has been removed.
+    Loadless block "xfft/blk00000eb3/blk00000ecd" (BUF) removed.
+ The signal "xfft/blk00000eb3/sig00001c86" is loadless and has been removed.
+  Loadless block "xfft/blk00000eb3/blk00000ece" (BUF) removed.
+Loadless block "xfft/blk00000eb3/blk00000eb7" (XOR) removed.
+Loadless block "xfft/blk00000eb3/blk00000eb8" (XOR) removed.
+Loadless block "xfft/blk00000eb3/blk00000eb9" (XOR) removed.
+Loadless block "xfft/blk00000eb3/blk00000eba" (XOR) removed.
+Loadless block "xfft/blk00000eb3/blk00000ebb" (XOR) removed.
+Loadless block "xfft/blk00000eb3/blk00000ebc" (XOR) removed.
+Loadless block "xfft/blk00000eb3/blk00000ebd" (XOR) removed.
+Loadless block "xfft/blk00000fa7" (SFF) removed.
+ The signal "xfft/sig00000c98" is loadless and has been removed.
+  Loadless block "xfft/blk00000f9e" (ROM) removed.
+   The signal "xfft/sig00000c5c" is loadless and has been removed.
+    Loadless block "xfft/blk00000f71" (FF) removed.
+   The signal "xfft/sig00000c58" is loadless and has been removed.
+    Loadless block "xfft/blk00000f6f" (FF) removed.
+The signal
+"xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/BLK
+_EXP<4>" is sourceless and has been removed.
+The signal
+"xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/BLK
+_EXP<3>" is sourceless and has been removed.
+The signal
+"xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/BLK
+_EXP<2>" is sourceless and has been removed.
+The signal
+"xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/BLK
+_EXP<1>" is sourceless and has been removed.
+The signal
+"xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/single_channel.datapath/BLK
+_EXP<0>" is sourceless and has been removed.
+The signal
+"xfft/U0/i_synth/non_floating_point.arch_b.xfft_inst/control/control/done_pr_d_1
+" is sourceless and has been removed.
+The signal "xfft/dv" is sourceless and has been removed.
+The signal "xfft/sig00000006" is sourceless and has been removed.
+ Sourceless block "xfft/blk000000b7" (SFF) removed.
+  The signal "xfft/sig000000b9" is sourceless and has been removed.
+   Sourceless block "xfft/blk00000174" (SFF) removed.
+   Sourceless block "xfft/blk000011f1" (MUX) removed.
+    The signal "xfft/sig000000bd" is sourceless and has been removed.
+ Sourceless block "xfft/blk000000b8" (SFF) removed.
+  The signal "xfft/sig000000ba" is sourceless and has been removed.
+   Sourceless block "xfft/blk00000175" (SFF) removed.
+   Sourceless block "xfft/blk000011e8" (ROM) removed.
+    The signal "xfft/sig000000be" is sourceless and has been removed.
+   Sourceless block "xfft/blk000011f2" (ROM) removed.
+    The signal "xfft/sig00000d16" is sourceless and has been removed.
+   Sourceless block "xfft/blk000011f3" (ROM) removed.
+    The signal "xfft/sig00000d17" is sourceless and has been removed.
+ Sourceless block "xfft/blk000000b9" (SFF) removed.
+  The signal "xfft/sig000000bb" is sourceless and has been removed.
+   Sourceless block "xfft/blk00000176" (SFF) removed.
+   Sourceless block "xfft/blk000011e9" (ROM) removed.
+    The signal "xfft/sig000000bf" is sourceless and has been removed.
+ Sourceless block "xfft/blk000000ba" (SFF) removed.
+  The signal "xfft/sig0000017b" is sourceless and has been removed.
+   Sourceless block "xfft/blk00000177" (SFF) removed.
+   Sourceless block "xfft/blk000011ea" (ROM) removed.
+    The signal "xfft/sig000000c0" is sourceless and has been removed.
+ Sourceless block "xfft/blk000000bb" (SFF) removed.
+  The signal "xfft/sig0000017c" is sourceless and has been removed.
+   Sourceless block "xfft/blk00000178" (SFF) removed.
+   Sourceless block "xfft/blk0000107e" (ROM) removed.
+    The signal "xfft/sig000000bc" is sourceless and has been removed.
+The signal "xfft/sig00000005" is sourceless and has been removed.
+ Sourceless block "xfft/blk00001149" (ROM) removed.
+The signal "xfft/sig00000179" is sourceless and has been removed.
+The signal "xfft/sig00000aa1" is sourceless and has been removed.
+ Sourceless block "xfft/blk00000d36" (SFF) removed.
+The signal "xfft/sig00000b62" is sourceless and has been removed.
+The signal "xfft/sig00000b63" is sourceless and has been removed.
+The signal "xfft/sig00000b64" is sourceless and has been removed.
+The signal "xfft/sig00000b65" is sourceless and has been removed.
+The signal "xfft/sig00000b66" is sourceless and has been removed.
+The signal "xfft/sig00000b67" is sourceless and has been removed.
+The signal "xfft/sig00000b19" is sourceless and has been removed.
+The signal "xfft/sig00000b0c" is sourceless and has been removed.
+ Sourceless block "xfft/blk000011f6" (BUF) removed.
+The signal "xfft/sig00000c57" is sourceless and has been removed.
+The signal "xfft/sig00000c5b" is sourceless and has been removed.
+The signal "xfft/sig00000c5a" is sourceless and has been removed.
+The signal "xfft/sig00000c59" is sourceless and has been removed.
+The signal "xfft/sig00000c5d" is sourceless and has been removed.
+The signal "xfft/blk00000def/blk00000df0/sig00001b01" is sourceless and has been
+removed.
+The signal "xfft/blk00000def/blk00000df0/sig00001b02" is sourceless and has been
+removed.
+The signal "xfft/blk00000def/blk00000df0/sig00001b03" is sourceless and has been
+removed.
+ Sourceless block "xfft/blk00000def/blk00000df0/blk00000df4" (FF) removed.
+The signal "xfft/blk00000e0d/blk00000e0e/sig00001b3a" is sourceless and has been
+removed.
+The signal "xfft/blk00000e0d/blk00000e0e/sig00001b3b" is sourceless and has been
+removed.
+ Sourceless block "xfft/blk00000e0d/blk00000e0e/blk00000e11" (FF) removed.
+The signal "xfft/blk00000e57/blk00000e58/sig00001be3" is sourceless and has been
+removed.
+ Sourceless block "xfft/blk00000e57/blk00000e58/blk00000e59" (SFF) removed.
+The signal "xfft/blk00000e57/blk00000e58/sig00001be4" is sourceless and has been
+removed.
+The signal "xfft/blk00000e57/blk00000e58/sig00001be5" is sourceless and has been
+removed.
+The signal "xfft/blk00000e5d/blk00000e5e/sig00001bec" is sourceless and has been
+removed.
+The signal "xfft/blk00000e5d/blk00000e5e/sig00001bed" is sourceless and has been
+removed.
+ Sourceless block "xfft/blk00000e5d/blk00000e5e/blk00000e62" (FF) removed.
+The signal "xfft/blk00000e5d/blk00000e5e/sig00001bee" is sourceless and has been
+removed.
+Unused block "xfft/blk00000d3e" (FF) removed.
+Unused block "xfft/blk00000d3f" (FF) removed.
+Unused block "xfft/blk00000d40" (FF) removed.
+Unused block "xfft/blk00000d41" (FF) removed.
+Unused block "xfft/blk00000d42" (FF) removed.
+Unused block "xfft/blk00000d43" (FF) removed.
+Unused block "xfft/blk00000d54" (SFF) removed.
+Unused block "xfft/blk00000def/blk00000df0/blk00000df1" (ZERO) removed.
+Unused block "xfft/blk00000def/blk00000df0/blk00000df2" (ONE) removed.
+Unused block "xfft/blk00000def/blk00000df0/blk00000df3" (SRLC16E) removed.
+Unused block "xfft/blk00000e0d/blk00000e0e/blk00000e0f" (ONE) removed.
+Unused block "xfft/blk00000e0d/blk00000e0e/blk00000e10" (SRLC16E) removed.
+Unused block "xfft/blk00000e57/blk00000e58/blk00000e5a" (ZERO) removed.
+Unused block "xfft/blk00000e57/blk00000e58/blk00000e5b" (ONE) removed.
+Unused block "xfft/blk00000e57/blk00000e58/blk00000e5c" (SRLC16E) removed.
+Unused block "xfft/blk00000e5d/blk00000e5e/blk00000e5f" (ZERO) removed.
+Unused block "xfft/blk00000e5d/blk00000e5e/blk00000e60" (ONE) removed.
+Unused block "xfft/blk00000e5d/blk00000e5e/blk00000e61" (SRLC16E) removed.
+Unused block "xfft/blk00000f70" (FF) removed.
+Unused block "xfft/blk00000f72" (FF) removed.
+Unused block "xfft/blk00000f73" (FF) removed.
+Unused block "xfft/blk00000f74" (FF) removed.
+Unused block "xfft/blk00000f75" (FF) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+VCC 		xfft/blk00000001
+GND 		xfft/blk00000002
+GND 		xfft/blk00000179/blk0000017a/blk0000017b
+VCC 		xfft/blk00000179/blk0000017a/blk0000017c
+GND 		xfft/blk000001a1/blk000001a2/blk000001a3
+VCC 		xfft/blk000001a1/blk000001a2/blk000001a4
+GND 		xfft/blk0000025d/blk0000025e/blk0000025f
+VCC 		xfft/blk0000025d/blk0000025e/blk00000260
+GND 		xfft/blk00000285/blk00000286/blk00000287
+VCC 		xfft/blk00000285/blk00000286/blk00000288
+GND 		xfft/blk0000045d/blk0000045e
+GND 		xfft/blk000004ba/blk000004bb
+GND 		xfft/blk00000517/blk00000518
+GND 		xfft/blk00000574/blk00000575
+GND 		xfft/blk000006b5/blk000006b6
+GND 		xfft/blk00000725/blk00000726
+GND 		xfft/blk00000795/blk00000796
+GND 		xfft/blk000007f6/blk000007f7
+GND 		xfft/blk00000857/blk00000858
+GND 		xfft/blk000008b8/blk000008b9
+VCC 		xfft/blk00000919/blk0000091a
+VCC 		xfft/blk0000097a/blk0000097b
+VCC 		xfft/blk000009db/blk000009dc
+VCC 		xfft/blk00000a3c/blk00000a3d
+GND 		xfft/blk00000bc5/blk00000bc6/blk00000bc7
+VCC 		xfft/blk00000bc5/blk00000bc6/blk00000bc8
+GND 		xfft/blk00000c5b/blk00000c5c
+GND 		xfft/blk00000c82/blk00000c83
+GND 		xfft/blk00000ca9/blk00000caa
+GND 		xfft/blk00000cd0/blk00000cd1
+GND 		xfft/blk00000d0b/blk00000d0c/blk00000d0d
+VCC 		xfft/blk00000d0b/blk00000d0c/blk00000d0e
+GND 		xfft/blk00000d11/blk00000d12/blk00000d13
+VCC 		xfft/blk00000d11/blk00000d12/blk00000d14
+GND 		xfft/blk00000d17/blk00000d18/blk00000d19
+VCC 		xfft/blk00000d17/blk00000d18/blk00000d1a
+GND 		xfft/blk00000d1d/blk00000d1e/blk00000d1f
+VCC 		xfft/blk00000d1d/blk00000d1e/blk00000d20
+GND 		xfft/blk00000d23/blk00000d24/blk00000d25
+VCC 		xfft/blk00000d23/blk00000d24/blk00000d26
+GND 		xfft/blk00000d29/blk00000d2a/blk00000d2b
+VCC 		xfft/blk00000d29/blk00000d2a/blk00000d2c
+FDE 		xfft/blk00000d39
+   optimized to 0
+VCC 		xfft/blk00000d71/blk00000d72
+GND 		xfft/blk00000d71/blk00000d73
+VCC 		xfft/blk00000da0/blk00000da1
+GND 		xfft/blk00000da0/blk00000da2
+VCC 		xfft/blk00000dc5/blk00000dc6
+GND 		xfft/blk00000dc5/blk00000dc7
+VCC 		xfft/blk00000dd9/blk00000dda
+GND 		xfft/blk00000dd9/blk00000ddb
+GND 		xfft/blk00000de3/blk00000de4/blk00000de5
+VCC 		xfft/blk00000de3/blk00000de4/blk00000de6
+GND 		xfft/blk00000de9/blk00000dea/blk00000deb
+VCC 		xfft/blk00000de9/blk00000dea/blk00000dec
+GND 		xfft/blk00000df5/blk00000df6/blk00000df7
+VCC 		xfft/blk00000df5/blk00000df6/blk00000df8
+GND 		xfft/blk00000dfb/blk00000dfc/blk00000dfd
+VCC 		xfft/blk00000dfb/blk00000dfc/blk00000dfe
+GND 		xfft/blk00000e01/blk00000e02/blk00000e03
+VCC 		xfft/blk00000e01/blk00000e02/blk00000e04
+GND 		xfft/blk00000e07/blk00000e08/blk00000e09
+VCC 		xfft/blk00000e07/blk00000e08/blk00000e0a
+GND 		xfft/blk00000e12/blk00000e13/blk00000e14
+VCC 		xfft/blk00000e12/blk00000e13/blk00000e15
+GND 		xfft/blk00000e1a/blk00000e1b/blk00000e1c
+VCC 		xfft/blk00000e1a/blk00000e1b/blk00000e1d
+GND 		xfft/blk00000e22/blk00000e23/blk00000e24
+GND 		xfft/blk00000e35/blk00000e36/blk00000e37
+GND 		xfft/blk00000e48/blk00000e49/blk00000e4a
+GND 		xfft/blk00000e51/blk00000e52/blk00000e53
+VCC 		xfft/blk00000e51/blk00000e52/blk00000e54
+GND 		xfft/blk00000e63/blk00000e64/blk00000e65
+VCC 		xfft/blk00000e63/blk00000e64/blk00000e66
+GND 		xfft/blk00000e6b/blk00000e6c/blk00000e77
+VCC 		xfft/blk00000e6b/blk00000e6c/blk00000e78
+GND 		xfft/blk00000e83/blk00000e84/blk00000e85
+VCC 		xfft/blk00000e83/blk00000e84/blk00000e86
+GND 		xfft/blk00000ea0/blk00000ea1/blk00000ea2
+VCC 		xfft/blk00000ea0/blk00000ea1/blk00000ea3
+GND 		xfft/blk00000eac/blk00000ead/blk00000eae
+FDE 		xfft/blk00000f5d
+   optimized to 0
+FDE 		xfft/blk00000f5e
+   optimized to 0
+LUT6 		xfft/blk00000f86
+   optimized to 0
+LUT6 		xfft/blk00000f87
+   optimized to 0
+GND 		xfft/blk00000fa8/blk00000fa9
+GND 		xfft/blk00000fc6/blk00000fc7/blk00000fc8
+VCC 		xfft/blk00000fc6/blk00000fc7/blk00000fc9
+GND 		xfft/blk00000fda/blk00000fdb/blk00000fdc
+VCC 		xfft/blk00000fda/blk00000fdb/blk00000fdd
+GND 		xfft/blk00000fee/blk00000fef/blk00000ff0
+VCC 		xfft/blk00000fee/blk00000fef/blk00000ff1
+GND 		xfft/blk00001002/blk00001003/blk00001004
+VCC 		xfft/blk00001002/blk00001003/blk00001005
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AUD_BIT_CLK                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AUD_RESET                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| AUD_SDI                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AUD_SDO                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| AUD_SYNC                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| AUD_reset_btn                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| LCD_E                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LCD_RS                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LCD_RW                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LCD_clear_btn                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| LCD_reset_btn                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| clk                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| to_LCD<0>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| to_LCD<1>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| to_LCD<2>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| to_LCD<3>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| to_LCD<4>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| to_LCD<5>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| to_LCD<6>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| to_LCD<7>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

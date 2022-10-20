@@ -1,0 +1,30 @@
+V3 19
+FL /home/ise/FrequencyFinder/AC97.vhd 2022/10/07.18:42:09 P.20131013
+EN work/AC97 1665194407 FL /home/ise/FrequencyFinder/AC97.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB work/Common 1665194404
+AR work/AC97/AC97_arch 1665194408 \
+      FL /home/ise/FrequencyFinder/AC97.vhd EN work/AC97 1665194407
+FL /home/ise/FrequencyFinder/Common.vhd 2022/10/08.01:59:29 P.20131013
+PH work/Common 1665194403 FL /home/ise/FrequencyFinder/Common.vhd \
+      PB ieee/std_logic_1164 1381692176
+PB work/Common 1665194404 \
+      FL /home/ise/FrequencyFinder/Common.vhd PH work/Common 1665194403
+FL /home/ise/FrequencyFinder/LCD.vhd 2022/10/08.01:11:53 P.20131013
+EN work/LCD 1665194405 FL /home/ise/FrequencyFinder/LCD.vhd PB ieee/std_logic_1164 1381692176 \
+      PB work/Common 1665194404
+AR work/LCD/LCD_arch 1665194406 \
+      FL /home/ise/FrequencyFinder/LCD.vhd EN work/LCD 1665194405
+FL /home/ise/FrequencyFinder/LCD_DataSender.vhd 2022/10/03.21:50:06 P.20131013
+EN work/LCD_DataSender 1665194409 FL /home/ise/FrequencyFinder/LCD_DataSender.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/LCD_DataSender/LCD_DataSender_arch 1665194410 \
+      FL /home/ise/FrequencyFinder/LCD_DataSender.vhd EN work/LCD_DataSender 1665194409 \
+      CP LCD
+FL /home/ise/FrequencyFinder/Top.vhd 2022/10/08.01:59:36 P.20131013
+EN work/top_module 1665194411 FL /home/ise/FrequencyFinder/Top.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB work/Common 1665194404
+AR work/top_module/Behavioral 1665194412 \
+      FL /home/ise/FrequencyFinder/Top.vhd EN work/top_module 1665194411 CP AC97 \
+      CP LCD_DataSender CP xfft_v7_1

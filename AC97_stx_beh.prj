@@ -1,0 +1,2 @@
+vhdl isim_temp "Common.vhd"
+vhdl isim_temp "AC97.vhd"
