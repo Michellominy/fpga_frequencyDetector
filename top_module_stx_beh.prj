@@ -1,6 +1,0 @@
-vhdl isim_temp "xfft_v7_1.vhd"
-vhdl isim_temp "LCD.vhd"
-vhdl isim_temp "Common.vhd"
-vhdl isim_temp "LCD_DataSender.vhd"
-vhdl isim_temp "AC97.vhd"
-vhdl isim_temp "Top.vhd"

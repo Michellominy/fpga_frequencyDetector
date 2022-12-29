@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/FrequencyFinder/top_module_isim_beh.exe" -prj "/home/ise/FrequencyFinder/top_module_beh.prj" "work.top_module" 

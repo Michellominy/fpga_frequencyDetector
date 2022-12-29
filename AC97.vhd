@@ -47,7 +47,7 @@ architecture AC97_arch of AC97 is
 	-- [96, 115] slot 5
 	
 begin
-	
+	-- https://forum.digikey.com/t/ac97-codec-hardware-driver-example/13194
 	process (clk, AUD_reset_btn)
 	begin
 		if (clk'event and clk = '1') then
@@ -63,7 +63,7 @@ begin
 		end if;
 	end process;
 	
-	process(AUD_BIT_CLK, AUD_reset_btn, bit_count) -- Activate frame (sync), Increment bit_count 
+	process(AUD_BIT_CLK, AUD_reset_btn, bit_count) -- Audio out, Activate frame (sync), Increment bit_count 
 	begin
 
 		if(AUD_reset_btn = '1') then -- RESET button control
@@ -86,12 +86,12 @@ begin
 					when "00000010" => AUD_SDO <= valid_control_data;  		-- Valid Control data 
 					when others => AUD_SDO <= '0';
 				end case;
-			elsif (bit_count >= "00010000") and (bit_count <= "00010111") then -- slot 1 (16 <= ... <= 23)
+			elsif (bit_count >= "00010000") and (bit_count <= "00010111") then -- slot 1
 				case bit_count is
 					when "00010000" => AUD_SDO <= reg_RW; -- Read = 1, Write = 0
 					when others => AUD_SDO <= reg_address(23 - to_integer(unsigned(bit_count)));
 				end case;
-			elsif (bit_count >= "00100100") and (bit_count <= "00110011") then -- slot 2 36 <= ... <= 51
+			elsif (bit_count >= "00100100") and (bit_count <= "00110011") then -- slot 2
 				AUD_SDO <= reg_data(51 - to_integer(unsigned(bit_count)));
 			end if;
 			
@@ -103,7 +103,7 @@ begin
 	variable aud_data_count : integer := 0;
 	begin
 		if(AUD_BIT_CLK'event and AUD_BIT_CLK = '0') then
-			if((bit_count >= "00111000") and (bit_count <= "01001001")) then -- Slot 3 : (56 <= bit_count <= 73)
+			if((bit_count >= "00111000") and (bit_count <= "01001001")) then -- Slot 3
 				aud_in_data(73 - to_integer(unsigned(bit_count))) <= AUD_SDI;
 			
 			elsif (bit_count = "01100000" and update_PCM_data = '1') then -- Begining of slot 5 (96)
@@ -182,10 +182,10 @@ begin
 				reg_data <= "1000000000000000"; -- 8000h, 3D bypassed
 				next_state <= pcm_adc_rate;
 			when pcm_adc_rate =>
-				valid_control_data <= '1'; -- TODO: automatically configure sample rate
+				valid_control_data <= '1';
 				reg_RW <= '0'; -- Write
 				reg_address <= "0110010"; -- 32h
-				reg_data <= "1011101110000000"; -- BB80h, 48khz
+				reg_data <= std_logic_vector(to_unsigned(pcm_sample_rate, reg_data'length));
 				next_state <= reset_done;
 			when reset_done =>
 				valid_control_data <= '0';

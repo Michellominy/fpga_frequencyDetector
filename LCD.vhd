@@ -60,7 +60,7 @@ begin
 						RS <= '0';
 						RW <= '0';
 						E <= '1';
-						to_LCD<= "00001111";
+						to_LCD<= "00001110";
 						clk_count := clk_count + 1;
 					elsif(clk_count < 37 * clk_freq) then
 						E <= '0';
